@@ -18,14 +18,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     var myArray = ["hello", "bye", "what", "ever."]
+    
+    var name: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         getStuff()
         
-        var nib = UINib(nibName: "UserCell", bundle: nil)
-        
-        tableView.registerNib(nib, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +44,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             .responseSwiftyJSON({ (request, response, json, error) in
                 print(json)
                 print(error)
+                
+                //self.name = json["display_name"].stringValue
+                
+                print("THIS IS YOUR NAME: \(json["display_name"].stringValue)")
+                
             })
-        
+        //name = json["name"].stringValue
 ///
    }
     
@@ -59,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as! UserCell
         
         //cell.middleLabel.text = items[indexPath.row]
-        cell.nameLabel?.text = myArray[indexPath.row]
+        cell.nameLabel?.text = name
         //cell.rightLabel.text = items[indexPath.row]
         
         return cell
