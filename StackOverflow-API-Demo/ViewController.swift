@@ -7,17 +7,16 @@
 //
 
 import UIKit
-//import Alamofire
 import Alamofire
-import Alamofire_SwiftyJSON
-//import Alamofire_SwiftyJSON
 
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    var myArray = ["hello", "bye", "what", "ever."]
+    var users: [String]? = []
+    
+    var otherArray = ["some", "things", "keep", "moving"]
     
     var name: String!
     
@@ -40,34 +39,113 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // This makes the GET call to stackoverflow.com. It simply gets the users info and .
     func getStuff() {
         
-       Alamofire.request(.GET, "https://api.stackexchange.com/2.2/users?site=stackoverflow", parameters: ["foo": "bar"])
-            .responseSwiftyJSON({ (request, response, json, error) in
-                print(json)
-                print(error)
+        let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
+        
+        Alamofire.request(.GET, url).responseJSON { (response) -> Void in
+            
+         /*   if json != nil {
+                var jsonObj = JSON(json!)
+                if let data = jsonObj["data"].arrayValue as [JSON]?{
+                    self.datas = data
+                    self.tableView.reloadData()*/
+        
+            if let JSON = response.result.value {
                 
+                let items = JSON["items"] as? NSArray
+                
+                
+                print(items?.objectAtIndex(0).objectForKey("display_name") as? String)
+                
+              //  let items = (JSON.valueForKey("items") as! NSArray)
+                
+                //for item in JSON{
+                    
+                   // var user: User = User()
+                    
+                  //  if let items = JSON["items"] as? NSArray {
+                 //   user.location = items["display_name"] as? String
+                    
+                   // self.users?.append(user.name)
+                    
+                 //   print(user.name)
+                    
+                }
+            }
+                   // print(JSON["items"])
+                
+                //self.myArray?.append(JSON[])
+                
+               // print(self.myArray)
+                        
+                   // }
+                    //print("Dani's age is \(age)")
+        }
+  //  }
+    
+    
+                   // return
+              //  }
+                
+              //  self.json = JSON(data)
+                //self.tableView.reloadData()
+                
+     //   }
+
+                
+             /*   if (json != nil){
+                    
+                    var jsonObj = json
+                    
+                    if let data = jsonObj["items"].arrayValue as []?{
+                        self.myArray = data
+                        self.tableView.reloadData()
+                        
+                        print(json)
+                        print(error)
+                        
+                    }
+                    
+                    
+            }*/
+
                 //self.name = json["display_name"].stringValue
                 
-                print("THIS IS YOUR NAME: \(json["display_name"].stringValue)")
+           //     print("THIS IS YOUR NAME: \(json[0].stringValue)")
                 
-            })
+          //  }
         //name = json["name"].stringValue
 ///
-   }
+  // }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return myArray.count
+        return otherArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as! UserCell
         
-        //cell.middleLabel.text = items[indexPath.row]
-        cell.nameLabel?.text = name
-        //cell.rightLabel.text = items[indexPath.row]
+        let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
+        
+        Alamofire.request(.GET, url).responseJSON { (response) -> Void in
+
+            if let JSON = response.result.value {
+                
+                let items = JSON["items"] as? NSArray
+                
+                print(JSON)
+                    
+        cell.repLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("reputation") as? String?.toInt()
+        cell.nameLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("display_name") as? String
+        cell.locationLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("location") as? String
+                
+            }
+            
+        }
         
         return cell
+        
         
     }
     
