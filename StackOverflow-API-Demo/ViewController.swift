@@ -16,16 +16,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     var users: [String]? = []
     
-    var otherArray = ["some", "things", "keep", "moving"]
-    
     var name: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        getStuff()
-        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,91 +32,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     
-    //MARK: - REST calls
-    // This makes the GET call to stackoverflow.com. It simply gets the users info and .
-    func getStuff() {
-        
-        let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
-        
-        Alamofire.request(.GET, url).responseJSON { (response) -> Void in
-            
-         /*   if json != nil {
-                var jsonObj = JSON(json!)
-                if let data = jsonObj["data"].arrayValue as [JSON]?{
-                    self.datas = data
-                    self.tableView.reloadData()*/
-        
-            if let JSON = response.result.value {
-                
-                let items = JSON["items"] as? NSArray
-                
-                
-                print(items?.objectAtIndex(0).objectForKey("display_name") as? String)
-                
-              //  let items = (JSON.valueForKey("items") as! NSArray)
-                
-                //for item in JSON{
-                    
-                   // var user: User = User()
-                    
-                  //  if let items = JSON["items"] as? NSArray {
-                 //   user.location = items["display_name"] as? String
-                    
-                   // self.users?.append(user.name)
-                    
-                 //   print(user.name)
-                    
-                }
-            }
-                   // print(JSON["items"])
-                
-                //self.myArray?.append(JSON[])
-                
-               // print(self.myArray)
-                        
-                   // }
-                    //print("Dani's age is \(age)")
-        }
-  //  }
     
-    
-                   // return
-              //  }
-                
-              //  self.json = JSON(data)
-                //self.tableView.reloadData()
-                
-     //   }
-
-                
-             /*   if (json != nil){
-                    
-                    var jsonObj = json
-                    
-                    if let data = jsonObj["items"].arrayValue as []?{
-                        self.myArray = data
-                        self.tableView.reloadData()
-                        
-                        print(json)
-                        print(error)
-                        
-                    }
-                    
-                    
-            }*/
-
-                //self.name = json["display_name"].stringValue
-                
-           //     print("THIS IS YOUR NAME: \(json[0].stringValue)")
-                
-          //  }
-        //name = json["name"].stringValue
-///
-  // }
+    // MARK: - Table view data source
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 1
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return otherArray.count
+        return 20
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -128,6 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
         
+        // This makes the GET call to stackoverflow.com. It simply gets the users info and
         Alamofire.request(.GET, url).responseJSON { (response) -> Void in
 
             if let JSON = response.result.value {
@@ -136,7 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 print(JSON)
                     
-        cell.repLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("reputation") as? String?.toInt()
+       // cell.repLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("reputation") as? String?.toInt()
         cell.nameLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("display_name") as? String
         cell.locationLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("location") as? String
                 
@@ -145,7 +68,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         return cell
-        
         
     }
     
