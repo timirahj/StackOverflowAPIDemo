@@ -15,8 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     var users: [String]? = []
-    
-    var name: String!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     
     }
-    
-    
     
     
     // MARK: - Table view data source
@@ -58,10 +55,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let items = JSON["items"] as? NSArray
                 
                 print(JSON)
-                    
-       // cell.repLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("reputation") as? String?.toInt()
-        cell.nameLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("display_name") as? String
-        cell.locationLabel?.text = items?.objectAtIndex(indexPath.row).objectForKey("location") as? String
+                
+                let rep = items!.objectAtIndex(indexPath.row).objectForKey("reputation")!.intValue
+                let name = items?.objectAtIndex(indexPath.row).objectForKey("display_name") as? String
+                let location = items?.objectAtIndex(indexPath.row).objectForKey("location") as? String
+                
+        cell.repLabel?.text = "Reputation: \(rep)"
+        cell.nameLabel?.text = name
+        cell.locationLabel?.text = location
                 
             }
             
@@ -71,6 +72,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+         self.performSegueWithIdentifier("showBadges", sender: indexPath)
+        
+    }
 
 }

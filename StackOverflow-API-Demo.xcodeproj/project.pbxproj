@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2610391D1C80E87A0040CCC8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2610391C1C80E87A0040CCC8 /* UserCell.swift */; };
+		263508BF1C8EA3D4004BF786 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263508BE1C8EA3D4004BF786 /* DetailViewController.swift */; };
 		263F4BBF1C8593820032A722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F4BBE1C8593820032A722 /* User.swift */; };
 		264A3A361C7CFA5D00802BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */; };
 		264A3A381C7CFA5D00802BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A3A371C7CFA5D00802BD3 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		1442C144A858C2729476AD85 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2610391C1C80E87A0040CCC8 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		263508BE1C8EA3D4004BF786 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
 		263F4BBE1C8593820032A722 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		264A3A321C7CFA5D00802BD3 /* StackOverflow-API-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StackOverflow-API-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */,
 				264A3A371C7CFA5D00802BD3 /* ViewController.swift */,
+				263508BE1C8EA3D4004BF786 /* DetailViewController.swift */,
 				264A3A391C7CFA5D00802BD3 /* Main.storyboard */,
 				263F4BBE1C8593820032A722 /* User.swift */,
 				2610391C1C80E87A0040CCC8 /* UserCell.swift */,
@@ -315,6 +318,7 @@
 			files = (
 				263F4BBF1C8593820032A722 /* User.swift in Sources */,
 				264A3A381C7CFA5D00802BD3 /* ViewController.swift in Sources */,
+				263508BF1C8EA3D4004BF786 /* DetailViewController.swift in Sources */,
 				264A3A361C7CFA5D00802BD3 /* AppDelegate.swift in Sources */,
 				2610391D1C80E87A0040CCC8 /* UserCell.swift in Sources */,
 			);
