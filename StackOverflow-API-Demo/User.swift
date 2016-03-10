@@ -14,6 +14,5 @@ class User: NSObject {
     var location: String?
     var reputation: String?
     var profileImageUrl: String?
-    var tags = [String]()
 
 }

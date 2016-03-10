@@ -29,8 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="185.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EhM-qp-F6c">
-                                                    <rect key="frame" x="14" y="29" width="91" height="78"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EhM-qp-F6c">
+                                                    <rect key="frame" x="14" y="29" width="91" height="74"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="91" id="EsY-Li-r0c"/>
                                                     </constraints>
@@ -67,7 +67,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="JGm-ZV-nmw" secondAttribute="bottom" constant="45.5" id="Kbw-E4-lxX"/>
                                                 <constraint firstItem="XqH-Aq-epp" firstAttribute="centerY" secondItem="Oje-08-Xgj" secondAttribute="centerY" id="NaX-Bt-edo"/>
                                                 <constraint firstItem="8QG-WO-F63" firstAttribute="trailing" secondItem="XqH-Aq-epp" secondAttribute="trailing" id="mOM-Zf-lg4"/>
-                                                <constraint firstItem="EhM-qp-F6c" firstAttribute="centerY" secondItem="Oje-08-Xgj" secondAttribute="centerY" id="qwO-1t-f05"/>
+                                                <constraint firstItem="EhM-qp-F6c" firstAttribute="centerY" secondItem="Oje-08-Xgj" secondAttribute="centerY" constant="-26.75" id="qwO-1t-f05"/>
                                                 <constraint firstItem="XqH-Aq-epp" firstAttribute="trailing" secondItem="JGm-ZV-nmw" secondAttribute="trailing" id="raR-OW-851"/>
                                                 <constraint firstItem="XqH-Aq-epp" firstAttribute="leading" secondItem="JGm-ZV-nmw" secondAttribute="leading" id="woE-aJ-S95"/>
                                                 <constraint firstItem="8QG-WO-F63" firstAttribute="leading" secondItem="EhM-qp-F6c" secondAttribute="trailing" constant="14" id="xEF-9Z-OfH"/>

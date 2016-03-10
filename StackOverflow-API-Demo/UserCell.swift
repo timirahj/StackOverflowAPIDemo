@@ -14,7 +14,6 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var repLabel: UILabel!
-    @IBOutlet weak var tagsLabel: UILabel!
     
 
     override func awakeFromNib() {

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B14980732A8354735863C4F7'
+               BlueprintIdentifier = '05A780FBA6AEBC4D7CE26211'
                BlueprintName = 'Pods-StackOverflow-API-Demo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_StackOverflow_API_Demo.framework'>
