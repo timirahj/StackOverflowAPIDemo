@@ -24,13 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let backgroundImage = UIImageView()
-        backgroundImage.image = UIImage(named: "blur-background.jpg")
-        backgroundImage.frame = self.view.bounds
-        
-        self.view.addSubview(backgroundImage)
-        
         tableView.reloadData()
+        
+        self.navigationController?.navigationItem.title = "StackOverflow Users"
         
         let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
         
@@ -54,7 +50,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         
-        
+    }
+    
+    
+   override func viewWillAppear(animated: Bool) {
+    
+    let backgroundImage = UIImage(named: "SO.png")
+    let imageView = UIImageView(image: backgroundImage)
+    imageView.contentMode = .ScaleAspectFit
+    self.tableView.backgroundColor = UIColor.orangeColor()
+    
+    self.tableView.backgroundView = imageView
+    
+    self.tableView.separatorColor = UIColor.blackColor()
+    
     }
     
    
@@ -92,17 +101,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.locationLabel?.text = location
         cell.profileImage.load(imageString!)
         
-        cell.backgroundColor = UIColor.clearColor()
+        cell.profileImage.layer.cornerRadius = 3
+        cell.profileImage.layer.borderWidth = 3
+        cell.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.6)
         
         return cell
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+   // func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-         self.performSegueWithIdentifier("showBadges", sender: indexPath)
+   //      self.performSegueWithIdentifier("showBadges", sender: indexPath)
         
-    }
+  //  }
 
 }
