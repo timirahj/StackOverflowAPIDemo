@@ -12,12 +12,13 @@ import ImageLoader
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+   
     @IBOutlet weak var tableView: UITableView!
+    
     var users: [String]? = []
     
-    var userInfo = [[String:AnyObject]]()//Array of dictionary
-
+    //Array of dictionary
+    var userInfo = [[String:AnyObject]]()
     
     
     override func viewDidLoad() {
@@ -26,8 +27,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.reloadData()
         
-        self.navigationController?.navigationItem.title = "StackOverflow Users"
+        self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
         
+        //
         let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
         
         // This makes the GET call to stackoverflow.com. It simply gets the users info and
@@ -101,6 +103,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.locationLabel?.text = location
         cell.profileImage.load(imageString!)
         
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        
+        if (location == nil){
+            
+             cell.locationLabel?.text = "Location Unknown"
+        }
+        
         cell.profileImage.layer.cornerRadius = 3
         cell.profileImage.layer.borderWidth = 3
         cell.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
@@ -109,12 +120,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-    
-    
-   // func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-   //      self.performSegueWithIdentifier("showBadges", sender: indexPath)
-        
-  //  }
 
 }
