@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2610391D1C80E87A0040CCC8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2610391C1C80E87A0040CCC8 /* UserCell.swift */; };
-		263508BF1C8EA3D4004BF786 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263508BE1C8EA3D4004BF786 /* DetailViewController.swift */; };
-		263965D81C922B360009EB2D /* blur-background1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 263965D71C922B360009EB2D /* blur-background1.jpg */; };
-		263F4BBF1C8593820032A722 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F4BBE1C8593820032A722 /* User.swift */; };
 		264185C51C90A8B90010BCEC /* ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264185C41C90A8B90010BCEC /* ImageLoader.framework */; };
 		264A3A361C7CFA5D00802BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */; };
 		264A3A381C7CFA5D00802BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264A3A371C7CFA5D00802BD3 /* ViewController.swift */; };
@@ -43,9 +40,6 @@
 
 /* Begin PBXFileReference section */
 		2610391C1C80E87A0040CCC8 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		263508BE1C8EA3D4004BF786 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
-		263965D71C922B360009EB2D /* blur-background1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blur-background1.jpg"; path = "../../../Downloads/blur-background1.jpg"; sourceTree = "<group>"; };
-		263F4BBE1C8593820032A722 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		264185C41C90A8B90010BCEC /* ImageLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageLoader.framework; path = "../../Library/Developer/Xcode/DerivedData/StackOverflow-API-Demo-epntuiosdmgukqbajaqeoxrlvlgb/Build/Products/Debug-iphonesimulator/ImageLoader.framework"; sourceTree = "<group>"; };
 		264A3A321C7CFA5D00802BD3 /* StackOverflow-API-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StackOverflow-API-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,13 +126,10 @@
 		264A3A341C7CFA5D00802BD3 /* StackOverflow-API-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				263965D71C922B360009EB2D /* blur-background1.jpg */,
 				2651D32C1C97FE5500F034DA /* SO.png */,
 				264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */,
 				264A3A371C7CFA5D00802BD3 /* ViewController.swift */,
-				263508BE1C8EA3D4004BF786 /* DetailViewController.swift */,
 				264A3A391C7CFA5D00802BD3 /* Main.storyboard */,
-				263F4BBE1C8593820032A722 /* User.swift */,
 				2610391C1C80E87A0040CCC8 /* UserCell.swift */,
 				264A3A3C1C7CFA5D00802BD3 /* Assets.xcassets */,
 				264A3A3E1C7CFA5D00802BD3 /* LaunchScreen.storyboard */,
@@ -283,7 +274,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263965D81C922B360009EB2D /* blur-background1.jpg in Resources */,
 				264A3A401C7CFA5D00802BD3 /* LaunchScreen.storyboard in Resources */,
 				264A3A3D1C7CFA5D00802BD3 /* Assets.xcassets in Resources */,
 				264A3A3B1C7CFA5D00802BD3 /* Main.storyboard in Resources */,
@@ -330,9 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263F4BBF1C8593820032A722 /* User.swift in Sources */,
 				264A3A381C7CFA5D00802BD3 /* ViewController.swift in Sources */,
-				263508BF1C8EA3D4004BF786 /* DetailViewController.swift in Sources */,
 				264A3A361C7CFA5D00802BD3 /* AppDelegate.swift in Sources */,
 				2610391D1C80E87A0040CCC8 /* UserCell.swift in Sources */,
 			);

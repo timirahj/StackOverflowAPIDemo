@@ -15,8 +15,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
    
     @IBOutlet weak var tableView: UITableView!
     
-    var users: [String]? = []
-    
     //Array of dictionary
     var userInfo = [[String:AnyObject]]()
     
