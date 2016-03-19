@@ -102,6 +102,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.repLabel?.text = "Reputation: \(rep)"
         cell.nameLabel?.text = name
         cell.locationLabel?.text = location
+        
+        // Load the user's profile image using ImageLoader's 'load' function
         cell.profileImage.load(imageString!)
         
         // make sure the edges of the separator are end to end
