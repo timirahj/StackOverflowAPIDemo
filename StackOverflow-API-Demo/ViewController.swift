@@ -21,25 +21,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // Do any additional setup after loading the view, typically from a nib.
         tableView.reloadData()
         
+        // Let's give our navigation bar a nice white blend
         self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
         
-        //
+        // Our URL in which we'll be getting our data from
         let url = "https://api.stackexchange.com/2.2/users?site=stackoverflow"
         
-        // This makes the GET call to stackoverflow.com. It simply gets the users info and
+        // This makes the GET call to our URL. Here, we get the all users' info
         Alamofire.request(.GET, url).responseJSON { (response) -> Void in
             
             let JSON = response.result.value
-                
+            
+            // typecast an array of the 'items' value as an array of dictionaries
             if let items = JSON!["items"] as? NSArray {
                 self.userInfo = items as! [[String: AnyObject]]
                 
             }
-            
                 print(JSON)
             
             if self.userInfo.count > 0 {
@@ -51,8 +52,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-    
-    
+   
+   /*
+    - Set the background image for the tableView
+    */
    override func viewWillAppear(animated: Bool) {
     
     let backgroundImage = UIImage(named: "SO.png")
@@ -101,19 +104,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.locationLabel?.text = location
         cell.profileImage.load(imageString!)
         
+        // make sure the edges of the separator are end to end
         cell.preservesSuperviewLayoutMargins = false
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
         
+        // if the location of the user is nil, set placeholder text for the locationLabel
         if (location == nil){
             
              cell.locationLabel?.text = "Location Unknown"
         }
         
+        // create a white round border around the user's profile image
         cell.profileImage.layer.cornerRadius = 3
         cell.profileImage.layer.borderWidth = 3
         cell.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         
+        // Let's make our cells transparent
         cell.backgroundColor = UIColor(white: 1, alpha: 0.6)
         
         return cell

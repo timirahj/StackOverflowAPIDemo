@@ -126,7 +126,7 @@
 		264A3A341C7CFA5D00802BD3 /* StackOverflow-API-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				2651D32C1C97FE5500F034DA /* SO.png */,
+				2696484A1C9DE607008CD442 /* images */,
 				264A3A351C7CFA5D00802BD3 /* AppDelegate.swift */,
 				264A3A371C7CFA5D00802BD3 /* ViewController.swift */,
 				264A3A391C7CFA5D00802BD3 /* Main.storyboard */,
@@ -154,6 +154,14 @@
 				264A3A571C7CFA5D00802BD3 /* Info.plist */,
 			);
 			path = "StackOverflow-API-DemoUITests";
+			sourceTree = "<group>";
+		};
+		2696484A1C9DE607008CD442 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				2651D32C1C97FE5500F034DA /* SO.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		676FB30FCF91CFD66FE4D16B /* Frameworks */ = {
