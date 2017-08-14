@@ -95,6 +95,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         
+          // Rounding the cell corners
+          cell.roundView.layer.cornerRadius = 8
+          cell.roundView.layer.masksToBounds = true
+        
+        // Give the cells a slight shadow effect
+        cell.layer.shadowColor      = UIColor.black.cgColor
+        cell.layer.shadowOffset     = CGSize.zero
+        cell.layer.shadowRadius     = 7
+        cell.layer.shadowOpacity    = 0.5
+        let shadowFrame: CGRect     = cell.layer.bounds
+        let shadowPath: CGPath      = UIBezierPath(rect: shadowFrame).cgPath
+        cell.layer.shadowPath       = shadowPath
+        cell.layer.masksToBounds    = false
+        
         var dict = userInfo[indexPath.row]
                 
                 let rep = dict["reputation"]!.int32Value
@@ -123,7 +137,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // create a white round border around the user's profile image
         cell.profileImage.layer.cornerRadius = 3
         cell.profileImage.layer.borderWidth = 3
-        cell.profileImage.layer.borderColor = UIColor.white.cgColor
+        cell.profileImage.layer.borderColor = UIColor.black.cgColor
         
         // Let's make our cells transparent
         cell.backgroundColor = UIColor(white: 1, alpha: 0.6)
