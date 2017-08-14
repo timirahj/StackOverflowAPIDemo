@@ -1,0 +1,7 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "b7e24fdb4224cb29cc7057f60aad14da"
+build_time: [556042979, 339601000]
+inputs:
+  "/Users/GERNiEB/Desktop/StackOverflowAPIDemo/StackOverflow-API-Demo/ViewController.swift": [556042978, 0]
+  "/Users/GERNiEB/Desktop/StackOverflowAPIDemo/StackOverflow-API-Demo/AppDelegate.swift": [556035524, 0]
+  "/Users/GERNiEB/Desktop/StackOverflowAPIDemo/StackOverflow-API-Demo/UserCell.swift": [556035524, 0]

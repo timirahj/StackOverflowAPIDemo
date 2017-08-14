@@ -1,13 +1,15 @@
 PODS:
-  - Alamofire (3.2.1)
-  - ImageLoader (0.8.8)
+  - Alamofire (4.5.0)
+  - KFSwiftImageLoader (3.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
-  - ImageLoader
+  - Alamofire (~> 4.4)
+  - KFSwiftImageLoader (~> 3.0)
 
 SPEC CHECKSUMS:
-  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
-  ImageLoader: 6bc633e7d679136b742a609b832d2bb19e53f3a5
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  KFSwiftImageLoader: c4656d614329480308b190c2b6f15015a4018ffc
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: b8b5a52decada2153fe63aae9732edb71d5d7971
+
+COCOAPODS: 1.2.1
